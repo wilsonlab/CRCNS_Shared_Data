@@ -1,0 +1,18 @@
+The file is a standard HDF5 file with the following structure:
+
+behavioral data:
+behavior/linear_position : vector of rat positions on the 10m long track (linearized with respect to the track start) in centimeters
+behavior/linear_velocity : vector of (smoothed) run velocity in cm/s
+behavior/time : vector of times at which rat position was measured
+
+general information:
+info/description
+info/experimenter
+info/session : session identifier
+info/subject : subject identifier
+
+spike data for each tetrode (TT):
+spikes/<TT>/amplitude : (n_spikes,4) array of spike amplitudes in microVolt
+spikes/<TT>/clusterID : (n_spikes,) vector of cluster IDs (noise cluster = 0)
+spikes/<TT>/time : (n_spikes,) vector of spike times in seconds
+
